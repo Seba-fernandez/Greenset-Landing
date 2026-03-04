@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="[NOMBRE DEL NEGOCIO] — Canchas de pádel y tenis global. Venta e instalación profesional de canchas deportivas" />
+  <title>Greenset Court —  Venta de canchas Marcelo Fernandez</title>
+
+  <!-- Google Fonts: Bebas Neue (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ─────────────────────────────────────────
+       HEADER / NAV
+  ───────────────────────────────────────── -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <!-- Reemplazá con el nombre o logo de tu papá -->
+      <a href="#hero" class="logo" aria-label="Ir al inicio">
+        Greenset Court
+      </a>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#canchas" class="nav-link">Canchas</a>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#contacto" class="nav-cta">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ─────────────────────────────────────────
+         HERO — Impacto visual + CTA principal
+    ───────────────────────────────────────── -->
+    <section class="hero" id="hero" aria-label="Sección principal">
+
+      <!-- Imagen de fondo: reemplazá con tu foto de cancha -->
+      <div class="hero-bg" role="img" aria-label="Cancha de pádel profesional">
+        <!-- PLACEHOLDER: ponés tu imagen como background-image en CSS -->
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+        <p class="hero-eyebrow reveal">Bienvenido a</p>
+        <!-- Nombre del club de tu papá -->
+        <h1 class="hero-title reveal reveal--delay-1">
+          Greenset Court
+        </h1>
+        <p class="hero-subtitle reveal reveal--delay-2">
+           Soluciónes profesionales, venta, y distribución de canchas de sintético<br />
+
+        </p>
+        <a href="#contacto" class="btn btn--primary reveal reveal--delay-3">
+          Contactanos
+        </a>
+      </div>
+
+      <!-- Flecha de scroll animada -->
+      <a href="#canchas" class="scroll-arrow" aria-label="Ver más">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- ─────────────────────────────────────────
+         STATS — Números que generan confianza
+    ───────────────────────────────────────── -->
+    <section class="stats" aria-label="Estadísticas del club">
+      <div class="container stats-grid">
+        <div class="stat-item reveal">
+          <!-- Reemplazá con la cantidad real de canchas -->
+          <span class="stat-number" data-target="[N]">[N]</span>
+          <span class="stat-label">Canchas</span>
+        </div>
+        <div class="stat-item reveal reveal--delay-1">
+          <!-- Reemplazá con años de experiencia -->
+          <span class="stat-number" data-target="[N]">[N]</span>
+          <span class="stat-label">Años de experiencia</span>
+        </div>
+        <div class="stat-item reveal reveal--delay-2">
+          <!-- Reemplazá con jugadores o reservas -->
+          <span class="stat-number" data-target="[N]">[N]</span>
+          <span class="stat-label">Clubes satisfechos</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────
+         CANCHAS — Tipos disponibles
+    ───────────────────────────────────────── -->
+    <section class="canchas" id="canchas" aria-labelledby="canchas-titulo">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Nuestras instalaciones</p>
+          <h2 class="section-title" id="canchas-titulo">Canchas de primer nivel</h2>
+          <p class="section-desc">
+            Infraestructura profesional para jugadores de todos los niveles.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+
+          <!-- Tarjeta 1: Reemplazá con tu tipo de cancha real -->
+          <article class="card reveal">
+            <div class="card-img-wrap">
+              <!-- PLACEHOLDER: agregá tu imagen en el style inline o en CSS -->
+              <div class="card-img card-img--1" role="img" aria-label="Cancha de pádel"></div>
+              <span class="card-badge">Disponible</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Cesped Azul</h3>
+              <p class="card-desc">
+                [Descripción breve de la cancha: superficie, iluminación, etc.]
+              </p>
+              <a href="#contacto" class="btn btn--outline">Consultar</a>
+            </div>
+          </article>
+
+          <!-- Tarjeta 2 -->
+          <article class="card reveal reveal--delay-1">
+            <div class="card-img-wrap">
+              <div class="card-img card-img--2" role="img" aria-label="Cancha de tenis"></div>
+              <span class="card-badge">Disponible</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Cesped Verde</h3>
+              <p class="card-desc">
+                [Descripción breve de la cancha: superficie, iluminación, etc.]
+              </p>
+              <a href="#contacto" class="btn btn--outline">Consultar</a>
+            </div>
+          </article>
+
+          <!-- Tarjeta 3 — si solo tenés 2 canchas, eliminá este bloque -->
+          <article class="card reveal reveal--delay-2">
+            <div class="card-img-wrap">
+              <div class="card-img card-img--3" role="img" aria-label="Cancha cubierta"></div>
+              <span class="card-badge card-badge--full">Disponible</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Cesped Rojo</h3>
+              <p class="card-desc">
+                [Descripción breve de la cancha: superficie, iluminación, etc.]
+              </p>
+              <a href="#contacto" class="btn btn--outline">Consultar</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────
+         NOSOTROS — Sección de confianza / historia
+    ───────────────────────────────────────── -->
+    <section class="nosotros" id="nosotros" aria-labelledby="nosotros-titulo">
+      <div class="container nosotros-inner">
+
+        <!-- Imagen lateral: reemplazá con foto de tu papá o del club -->
+        <div class="nosotros-img-wrap reveal">
+          <div class="nosotros-img" role="img" aria-label="[NOMBRE DEL DUEÑO] en la cancha">
+            <!-- PLACEHOLDER: ponés tu imagen como background en CSS -->
+          </div>
+          <!-- Tarjeta flotante con dato destacado -->
+          <div class="nosotros-float-card">
+            <span class="float-icon" aria-hidden="true">🏆</span>
+            <span class="float-text">[LOGRO O DATO DIFERENCIAL]</span>
+          </div>
+        </div>
+
+        <div class="nosotros-text reveal reveal--delay-1">
+          <p class="section-eyebrow">Quiénes somos</p>
+          <h2 class="section-title" id="nosotros-titulo">
+            Greenset Court,<br />apasionados del deporte
+          </h2>
+          <p class="nosotros-desc">
+            [Párrafo corto contando quién es marcelo, gaston y diego, sus historias con el deporte,
+            por qué eligieron esta idea, cuánto tiempo lleva en esto. Algo personal y
+            auténtico que genere confianza y conexión con el visitante.]
+          </p>
+          <p class="nosotros-desc">
+            [Segundo párrafo opcional: qué los diferencia del resto, qué valores tienen,
+            qué tipo de comunidad quieren construir.]
+          </p>
+          <a href="#contacto" class="btn btn--primary">Hablar con nosotros</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────
+         TESTIMONIOS — Social proof (opcional)
+    ───────────────────────────────────────── -->
+    <section class="testimonios" aria-labelledby="testimonios-titulo">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Lo que opinan</p>
+          <h2 class="section-title" id="testimonios-titulo">Clubes que nos eligen</h2>
+        </div>
+
+        <div class="testimonios-grid">
+
+          <blockquote class="testimonio reveal">
+            <p class="testimonio-texto">
+              "[Reemplazá con testimonio real de un cliente o jugador habitual del club.]"
+            </p>
+            <footer class="testimonio-autor">
+              <strong>[Nombre del club]</strong>
+              <span>[Ciudad o nivel de juego]</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonio reveal reveal--delay-1">
+            <p class="testimonio-texto">
+              "[Reemplazá con segundo testimonio real.]"
+            </p>
+            <footer class="testimonio-autor">
+              <strong>[Nombre del club]</strong>
+              <span>[Ciudad o nivel de juego]</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonio reveal reveal--delay-2">
+            <p class="testimonio-texto">
+              "[Reemplazá con tercer testimonio real.]"
+            </p>
+            <footer class="testimonio-autor">
+              <strong>[Nombre del club]</strong>
+              <span>[Ciudad o nivel de juego]</span>
+            </footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────
+         CONTACTO — Formulario que envía a WhatsApp
+    ───────────────────────────────────────── -->
+    <section class="contacto" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="container contacto-inner">
+
+        <div class="contacto-text reveal">
+          <p class="section-eyebrow">Contacto</p>
+          <h2 class="section-title" id="contacto-titulo">
+            ¿Listo para mejorar tu juego?
+          </h2>
+          <p class="contacto-desc">
+            Completá el formulario y resolvemos todas las consultas que tengas.
+          </p>
+
+          <!-- Datos de contacto directo -->
+          <ul class="contact-info" aria-label="Datos de contacto">
+            <li>
+              <span class="ci-icon" aria-hidden="true">📍</span>
+              <!-- Reemplazá con la dirección real -->
+              <span>Córdoba, Argentina</span>
+            </li>
+            <li>
+              <span class="ci-icon" aria-hidden="true">🕐</span>
+              <!-- Reemplazá con el horario real -->
+              <span>Horario de atención: Lun – Vie 8hs a 22hs</span>
+            </li>
+            <li>
+              <span class="ci-icon" aria-hidden="true">📲</span>
+              <!-- Reemplazá con el número real -->
+              <span>+54 9 3513785192</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Formulario — el JS arma el link de WhatsApp -->
+        <form class="form reveal reveal--delay-1" id="whatsapp-form" novalidate aria-label="Formulario de contacto">
+
+          <div class="form-group">
+            <label class="form-label" for="nombre">Tu nombre</label>
+            <input
+              class="form-input"
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Ej: Martín García"
+              autocomplete="given-name"
+              required
+              aria-required="true"
+            />
+            <span class="form-error" id="error-nombre" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="cancha">Tipo de cancha</label>
+            <select class="form-input form-select" id="cancha" name="cancha" required aria-required="true">
+              <option value="" disabled selected>Seleccioná una opción</option>
+              <!-- Reemplazá con tus tipos de cancha reales -->
+              <option value="[TIPO DE CANCHA 1]">[TIPO DE CANCHA 1]</option>
+              <option value="[TIPO DE CANCHA 2]">[TIPO DE CANCHA 2]</option>
+              <option value="[TIPO DE CANCHA 3]">[TIPO DE CANCHA 3]</option>
+            </select>
+            <span class="form-error" id="error-cancha" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="fecha">Fecha preferida</label>
+            <input
+              class="form-input"
+              type="date"
+              id="fecha"
+              name="fecha"
+              required
+              aria-required="true"
+            />
+            <span class="form-error" id="error-fecha" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="horario">Horario preferido</label>
+            <input
+              class="form-input"
+              type="text"
+              id="horario"
+              name="horario"
+              placeholder="Ej: 18:00 – 19:00"
+              required
+              aria-required="true"
+            />
+            <span class="form-error" id="error-horario" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="mensaje">Algo más que quieras comentar</label>
+            <textarea
+              class="form-input form-textarea"
+              id="mensaje"
+              name="mensaje"
+              placeholder="Tipo de proyecto, consulta aparte, etc. (opcional)"
+              rows="3"
+            ></textarea>
+          </div>
+
+          <button class="btn btn--primary btn--full" type="submit">
+            Enviar por WhatsApp
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="50" viewBox="0 0 50 50">
+    <path d="M25,2C12.318,2,2,12.318,2,25c0,3.96,1.023,7.854,2.963,11.29L2.037,46.73c-0.096,0.343-0.003,0.711,0.245,0.966 C2.473,47.893,2.733,48,3,48c0.08,0,0.161-0.01,0.24-0.029l10.896-2.699C17.463,47.058,21.21,48,25,48c12.682,0,23-10.318,23-23 S37.682,2,25,2z M36.57,33.116c-0.492,1.362-2.852,2.605-3.986,2.772c-1.018,0.149-2.306,0.213-3.72-0.231 c-0.857-0.27-1.957-0.628-3.366-1.229c-5.923-2.526-9.791-8.415-10.087-8.804C15.116,25.235,13,22.463,13,19.594 s1.525-4.28,2.067-4.864c0.542-0.584,1.181-0.73,1.575-0.73s0.787,0.005,1.132,0.021c0.363,0.018,0.85-0.137,1.329,1.001 c0.492,1.168,1.673,4.037,1.819,4.33c0.148,0.292,0.246,0.633,0.05,1.022c-0.196,0.389-0.294,0.632-0.59,0.973 s-0.62,0.76-0.886,1.022c-0.296,0.291-0.603,0.606-0.259,1.19c0.344,0.584,1.529,2.493,3.285,4.039 c2.255,1.986,4.158,2.602,4.748,2.894c0.59,0.292,0.935,0.243,1.279-0.146c0.344-0.39,1.476-1.703,1.869-2.286 s0.787-0.487,1.329-0.292c0.542,0.194,3.445,1.604,4.035,1.896c0.59,0.292,0.984,0.438,1.132,0.681 C37.062,30.587,37.062,31.755,36.57,33.116z"></path>
+</svg>
+          </button>
+
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─────────────────────────────────────────
+       FOOTER
+  ───────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">Greenset Court</p>
+      <p class="footer-copy">
+        © <span id="year"></span> Greenset Court. Todos los derechos reservados.
+      </p>
+      <!-- Opcional: redes sociales -->
+      <div class="footer-social">
+        <!-- Reemplazá los href con tus URLs reales -->
+        <a href="[URL DE INSTAGRAM]" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="[URL DE FACEBOOK]" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <!-- Reemplazá XXXXXXXXXXX con el número de tu papá (código de país + número, sin +) -->
+  <a
+    class="whatsapp-fab"
+    href="https://wa.me/5493513785192?text=Hola%2C%20quiero%20consultar%20sobre%20las%20canchas"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+<path fill="#fff" d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"></path><path fill="#fff" d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"></path><path fill="#cfd8dc" d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"></path><path fill="#40c351" d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"></path><path fill="#fff" fill-rule="evenodd" d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z" clip-rule="evenodd"></path>
+</svg>
+  </a>
+  
+
+  <script src="main.js"></script>
+</body>
+</html>
