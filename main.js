@@ -137,10 +137,10 @@ const WHATSAPP_NUMBER = 'XXXXXXXXXXX'; // ← reemplazá aquí
 
   /* Campos requeridos con sus mensajes de error */
   const rules = [
-    { id: 'nombre',  errorId: 'error-nombre',  msg: 'Por favor, ingresá tu nombre.' },
-    { id: 'cancha',  errorId: 'error-cancha',   msg: 'Seleccioná un tipo de cancha.' },
-    { id: 'fecha',   errorId: 'error-fecha',    msg: 'Elegí una fecha para la reserva.' },
-    { id: 'horario', errorId: 'error-horario',  msg: 'Indicá el horario que preferís.' },
+    { id: 'nombre',  errorId: 'error-nombre',  msg: 'Por favor, ingresá tu nombre y apellido.' },
+    { id: 'cancha',  errorId: 'error-cancha',   msg: 'Selecciona el tipo de proyecto.' },
+    { id: 'fecha',   errorId: 'error-fecha',    msg: 'Contanos tu estimación de presupuesto.' },
+    { id: 'horario', errorId: 'error-horario',  msg: 'Por favor, indica tu ubicación.' },
   ];
 
   /* Limpia errores de un campo específico */
@@ -229,4 +229,38 @@ const WHATSAPP_NUMBER = 'XXXXXXXXXXX'; // ← reemplazá aquí
 (function setYear() {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
+
+
+/* ─────────────────────────────────────────────────────
+   7. MENÚ HAMBURGUESA — Mobile
+───────────────────────────────────────────────────── */
+(function initMobileMenu() {
+  const toggle = document.getElementById('nav-toggle');
+  const nav    = document.getElementById('nav-menu');
+  if (!toggle || !nav) return;
+
+  function closeMenu() {
+    toggle.classList.remove('is-open');
+    nav.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', function () {
+    const isOpen = nav.classList.toggle('is-open');
+    toggle.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Cierra al hacer clic en cualquier link del menú
+  nav.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Cierra al hacer clic fuera del menú
+  document.addEventListener('click', function (e) {
+    if (!toggle.contains(e.target) && !nav.contains(e.target)) {
+      closeMenu();
+    }
+  });
 })();
