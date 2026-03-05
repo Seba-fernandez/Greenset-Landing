@@ -24,9 +24,16 @@
       <a href="#hero" class="logo" aria-label="Ir al inicio">
         Greenset Court
       </a>
-      <nav class="nav" aria-label="Navegación principal">
-        <a href="#canchas" class="nav-link">Canchas</a>
+
+      <!-- BOTÓN HAMBURGUESA — solo visible en mobile -->
+<button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+  <span class="nav-toggle-bar"></span>
+  <span class="nav-toggle-bar"></span>
+  <span class="nav-toggle-bar"></span>
+</button>
+      <nav class="nav" id="nav-menu" aria-label="Navegación principal">
         <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#canchas" class="nav-link">Canchas</a>
         <a href="#contacto" class="nav-cta">Contacto</a>
       </nav>
     </div>
@@ -56,37 +63,77 @@
 
         </p>
         <a href="#contacto" class="btn btn--primary reveal reveal--delay-3">
-          Contactanos
+          Pedí tu presupuesto
         </a>
       </div>
 
       <!-- Flecha de scroll animada -->
-      <a href="#canchas" class="scroll-arrow" aria-label="Ver más">
+      <a href="#nosotros" class="scroll-arrow" aria-label="Ver más">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path d="M12 5v14M5 12l7 7 7-7"/>
         </svg>
       </a>
     </section>
 
+    
     <!-- ─────────────────────────────────────────
-         STATS — Números que generan confianza
+         NOSOTROS — Sección de confianza / historia
+    ───────────────────────────────────────── -->
+    <section class="nosotros" id="nosotros" aria-labelledby="nosotros-titulo">
+      <div class="container nosotros-inner">
+
+        <!-- Imagen lateral: reemplazá con foto de tu papá o del club -->
+        <div class="nosotros-img-wrap reveal">
+          <div class="nosotros-img" role="img" aria-label="[NOMBRE DEL DUEÑO] en la cancha">
+            <!-- PLACEHOLDER: ponés tu imagen como background en CSS -->
+          </div>
+          <!-- Tarjeta flotante con dato destacado -->
+          <div class="nosotros-float-card">
+            <span class="float-icon" aria-hidden="true">🏆</span>
+            <span class="float-text">[LOGRO O DATO DIFERENCIAL]</span>
+          </div>
+        </div>
+
+        <div class="nosotros-text reveal reveal--delay-1">
+          <p class="section-eyebrow">Quiénes somos</p>
+          <h2 class="section-title" id="nosotros-titulo">
+            Greenset Court,<br />apasionados del deporte
+          </h2>
+          <p class="nosotros-desc">
+            [Párrafo corto contando quién es marcelo, gaston y diego, sus historias con el deporte,
+            por qué eligieron esta idea, cuánto tiempo lleva en esto. Algo personal y
+            auténtico que genere confianza y conexión con el visitante.]
+          </p>
+          <p class="nosotros-desc">
+            [Segundo párrafo opcional: qué los diferencia del resto, qué valores tienen,
+            qué tipo de comunidad quieren construir.]
+          </p>
+          <a href="#contacto" class="btn btn--primary">Hablar con nosotros</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────
+         STATS — Números incrementados que generan confianza
     ───────────────────────────────────────── -->
     <section class="stats" aria-label="Estadísticas del club">
       <div class="container stats-grid">
         <div class="stat-item reveal">
           <!-- Reemplazá con la cantidad real de canchas -->
           <span class="stat-number" data-target="[N]">[N]</span>
-          <span class="stat-label">Canchas</span>
+          <span class="stat-label">Años de experiencia</span>
         </div>
         <div class="stat-item reveal reveal--delay-1">
           <!-- Reemplazá con años de experiencia -->
           <span class="stat-number" data-target="[N]">[N]</span>
-          <span class="stat-label">Años de experiencia</span>
+          <span class="stat-label">Clubes satisfechos</span>
         </div>
         <div class="stat-item reveal reveal--delay-2">
           <!-- Reemplazá con jugadores o reservas -->
-          <span class="stat-number" data-target="[N]">[N]</span>
-          <span class="stat-label">Clubes satisfechos</span>
+          <span class="stat-number" data-target="[N]">50</span>
+          <span class="stat-label">Canchas Vendidas</span>
         </div>
       </div>
     </section>
@@ -156,43 +203,6 @@
       </div>
     </section>
 
-    <!-- ─────────────────────────────────────────
-         NOSOTROS — Sección de confianza / historia
-    ───────────────────────────────────────── -->
-    <section class="nosotros" id="nosotros" aria-labelledby="nosotros-titulo">
-      <div class="container nosotros-inner">
-
-        <!-- Imagen lateral: reemplazá con foto de tu papá o del club -->
-        <div class="nosotros-img-wrap reveal">
-          <div class="nosotros-img" role="img" aria-label="[NOMBRE DEL DUEÑO] en la cancha">
-            <!-- PLACEHOLDER: ponés tu imagen como background en CSS -->
-          </div>
-          <!-- Tarjeta flotante con dato destacado -->
-          <div class="nosotros-float-card">
-            <span class="float-icon" aria-hidden="true">🏆</span>
-            <span class="float-text">[LOGRO O DATO DIFERENCIAL]</span>
-          </div>
-        </div>
-
-        <div class="nosotros-text reveal reveal--delay-1">
-          <p class="section-eyebrow">Quiénes somos</p>
-          <h2 class="section-title" id="nosotros-titulo">
-            Greenset Court,<br />apasionados del deporte
-          </h2>
-          <p class="nosotros-desc">
-            [Párrafo corto contando quién es marcelo, gaston y diego, sus historias con el deporte,
-            por qué eligieron esta idea, cuánto tiempo lleva en esto. Algo personal y
-            auténtico que genere confianza y conexión con el visitante.]
-          </p>
-          <p class="nosotros-desc">
-            [Segundo párrafo opcional: qué los diferencia del resto, qué valores tienen,
-            qué tipo de comunidad quieren construir.]
-          </p>
-          <a href="#contacto" class="btn btn--primary">Hablar con nosotros</a>
-        </div>
-
-      </div>
-    </section>
 
     <!-- ─────────────────────────────────────────
          TESTIMONIOS — Social proof (opcional)
@@ -351,6 +361,8 @@
           </button>
 
         </form>
+
+        
 
       </div>
     </section>
