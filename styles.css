@@ -178,12 +178,13 @@ ul { list-style: none; }
    ============================================================ */
 .section-eyebrow {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.80rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--color-accent);
   margin-bottom: 0.75rem;
+  text-align: center;
 }
 
 .section-title {
@@ -193,6 +194,7 @@ ul { list-style: none; }
   letter-spacing: 0.06em;
   color: var(--color-white);
   margin-bottom: var(--space-sm);
+  text-align: center;
 }
 
 .section-desc {
@@ -258,16 +260,22 @@ ul { list-style: none; }
   transition: color var(--transition-fast);
 }
 
-.nav-link:hover { color: var(--color-white); }
+.nav-link:hover { color: var(--color-accent); }
 
 .nav-cta {
   font-size: 1rem;
   font-weight: 600;
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem 1.25rem;  
   border-radius: var(--radius-sm);
   background-color: var(--color-accent);
   color: #0a0a0a;
-  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  animation: nav-pulse 2s ease-in-out 1s infinite;
+  transition: background-color var(--transition-slow), transform var(--transition-slow);
+}
+
+@keyframes nav-pulse {
+  0%, 100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(200, 241, 53, 0); }
+  50%       { transform: scale(0.95); box-shadow: 0 0 6px 7px rgba(0, 0, 0, 0.158); }
 }
 
 .nav-cta:hover {
@@ -320,7 +328,7 @@ ul { list-style: none; }
 }
 
 .hero-eyebrow {
-  font-size: 0.8125rem;
+  font-size: 0.80rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-accent);
@@ -338,10 +346,10 @@ ul { list-style: none; }
 
 .hero-subtitle {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
-  color: rgba(240, 240, 240, 0.75);
+  color: rgba(240, 240, 240, 0.856);
   max-width: 30rem;
   margin-bottom: var(--space-md);
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 /* Flecha de scroll pulsante */
@@ -374,7 +382,7 @@ ul { list-style: none; }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   text-align: center;
   gap: var(--space-sm);
 }
@@ -565,7 +573,7 @@ ul { list-style: none; }
    TESTIMONIOS
    ============================================================ */
 .testimonios {
-  padding-block: var(--space-xl);
+  padding-block: var(--space-lg);
 }
 
 .testimonios-grid {
@@ -815,6 +823,78 @@ ul { list-style: none; }
   to   { opacity: 1; transform: scale(1); }
 }
 
+
+/* ============================================================
+   NAV HAMBURGUESA — Mobile
+   ============================================================ */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 101;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-white);
+  border-radius: 2px;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* Animación X al abrir */
+.nav-toggle.is-open .nav-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.is-open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.is-open .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Nav oculta en mobile por defecto */
+.nav {
+  display: none;
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  background-color: rgba(10, 10, 10, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: 1.5rem;
+  z-index: 99;
+}
+
+.nav.is-open {
+  display: flex;
+}
+
+.nav .nav-link,
+.nav .nav-cta {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.125rem;
+}
+
+.nav .nav-cta {
+  margin-top: 0.5rem;
+  border-radius: 0;
+}
+
+
 /* ============================================================
    MEDIA QUERIES — Tablet y Desktop
    ============================================================ */
@@ -848,9 +928,34 @@ ul { list-style: none; }
   }
 
   /* Header: enlaces visibles */
-  .nav {
+  /* En desktop: hamburguesa oculta, nav visible normal */
+.nav-toggle {
+  display: none;
+}
+
+.nav {
     gap: 3rem;
-  }
+  display: flex;
+  position: static;
+  flex-direction: row;
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  padding-block: 0;
+}
+
+.nav .nav-link,
+.nav .nav-cta {
+  width: auto;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+.nav .nav-cta {
+  margin-top: 0;
+  border-radius: var(--radius-sm);
+}
 
   /* Hero: título más grande */
   .hero-content {
@@ -884,6 +989,11 @@ ul { list-style: none; }
     padding-top: 0;
   }
 
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
   /* Testimonios: 3 columnas */
   .testimonios-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -902,12 +1012,14 @@ ul { list-style: none; }
   }
 }
 
+
 /* ── Wide desktop: ≥ (1400px) ── */
 @media (min-width: 1400px) {
   :root {
     --container-pad: 3rem;
   }
 }
+
 
 /* ============================================================
    PREFERENCIA DE MOVIMIENTO REDUCIDO (accesibilidad)
@@ -926,3 +1038,4 @@ ul { list-style: none; }
     transform: none;
   }
 }
+
