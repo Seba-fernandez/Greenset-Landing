@@ -117,15 +117,16 @@ ul { list-style: none; }
    ============================================================ */
 .btn {
   display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.875rem 2rem;
-  border-radius: var(--radius-sm);
+  justify-content: center;
+  width: 100%;
+  gap: 0.8rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   transition:
     background-color var(--transition-fast),
     color var(--transition-fast),
@@ -201,6 +202,10 @@ ul { list-style: none; }
   font-size: 1.0625rem;
   color: var(--color-text-muted);
   max-width: 38rem;
+  margin-inline: auto;
+  text-align: center;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .section-header {
@@ -269,7 +274,7 @@ ul { list-style: none; }
   border-radius: var(--radius-sm);
   background-color: var(--color-accent);
   color: #0a0a0a;
-  animation: nav-pulse 2s ease-in-out 1s infinite;
+  animation: nav-pulse 2s ease-in-out 6s ;
   transition: background-color var(--transition-slow), transform var(--transition-slow);
 }
 
@@ -329,6 +334,7 @@ ul { list-style: none; }
 
 .hero-eyebrow {
   font-size: 0.80rem;
+  padding-left: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-accent);
@@ -409,6 +415,81 @@ ul { list-style: none; }
   color: rgba(10, 10, 10, 0.65);
 }
 
+
+
+/* ============================================================
+   NOSOTROS
+   ============================================================ */
+.nosotros {
+  padding-block: var(--space-xl);
+  background-color: var(--color-surface);
+}
+
+.nosotros-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.nosotros-img-wrap {
+  position: relative;
+}
+
+/* ── PLACEHOLDER IMAGEN NOSOTROS ──
+   Reemplazá background-image con foto de tu papá o del club
+*/
+.nosotros-img {
+  width: 100%;
+  height: 28rem;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface-2);
+  background-image: url(img/NosotrosFoto.webp);
+  background-size: cover;
+  background-position: center top;
+}
+
+/* Tarjeta flotante sobre la imagen */
+.nosotros-float-card {
+  position: absolute;
+  bottom: -1.5rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-md);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.4);
+  color: #0a0a0a;
+}
+
+.float-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.float-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  max-width: 10rem;
+  line-height: 1.3;
+}
+
+.nosotros-text {
+  padding-top: 1rem; /* espacio para la tarjeta flotante en móvil */
+}
+
+.nosotros-desc {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+  line-height: 1.75;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
 /* ============================================================
    CANCHAS
    ============================================================ */
@@ -418,7 +499,8 @@ ul { list-style: none; }
 
 .cards-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 3rem;
+  padding: 1.3px;
   /* En móvil: 1 columna. Desktop: 3 columnas */
   grid-template-columns: 1fr;
 }
@@ -446,25 +528,27 @@ ul { list-style: none; }
    Ej: .card-img--1 { background-image: url('fotos/cancha-padel.jpg'); }
 */
 .card-img {
-  height: 14rem;
-  background-color: var(--color-surface-2);
+  height: 22rem;
+  background-color:
+  var(--color-surface-2);
   background-size: cover;
   background-position: center;
   transition: transform 0.3s ease;
 }
 
-.card:hover .card-img { transform: scale(1.06); }
+.card:hover .card-img { transform: scale(1.05); }
 
 /* Placeholders con color de fondo hasta que pongas las fotos */
 .card-img--1 { background-image : url(img/TipodeCanchaAzul.webp); }
 .card-img--2 { background-image : url(img/TipodeCanchaVerde.webp); }
 .card-img--3 { background-image : url(img/TipodeCanchaRoja.webp); }
+.card-img--4 { background-image : url(img/fotocancha14.jpeg); }
 
 .card-badge {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  padding: 0.3rem 0.75rem;
+  padding: 0.2rem 0.75rem;
   border-radius: 1.4rem;
   background-color: var(--color-accent);
   color: #0a0a0a;
@@ -474,17 +558,13 @@ ul { list-style: none; }
   text-transform: uppercase;
 }
 
-.card-badge--full {
-  background-color: var(--color-surface-2);
-  color: var(--color-text-muted);
-  border: 1px solid var(--color-border);
-}
 
 .card-body {
-  padding: 1rem;
+  padding: 1.2rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.30rem;
+  gap: 0.3rem;
 }
 
 .card-title {
@@ -492,81 +572,18 @@ ul { list-style: none; }
   font-size: 1.75rem;
   letter-spacing: 0.05em;
   color: var(--color-white);
+  padding-left: 20px;
 }
 
 .card-desc {
   font-size: 0.9375rem;
   color: var(--color-text-muted);
   flex: 1;
-}
+  text-align: center;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 15px;
 
-/* ============================================================
-   NOSOTROS
-   ============================================================ */
-.nosotros {
-  padding-block: var(--space-xl);
-  background-color: var(--color-surface);
-}
-
-.nosotros-inner {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-lg);
-  align-items: center;
-}
-
-.nosotros-img-wrap {
-  position: relative;
-}
-
-/* ── PLACEHOLDER IMAGEN NOSOTROS ──
-   Reemplazá background-image con foto de tu papá o del club
-*/
-.nosotros-img {
-  width: 100%;
-  height: 22rem;
-  border-radius: var(--radius-lg);
-  background-color: var(--color-surface-2);
-  background-image: url(img/NosotrosFoto.webp);
-  background-size: cover;
-  background-position: center top;
-}
-
-/* Tarjeta flotante sobre la imagen */
-.nosotros-float-card {
-  position: absolute;
-  bottom: -1.5rem;
-  right: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 1.25rem;
-  background-color: var(--color-accent);
-  border-radius: var(--radius-md);
-  box-shadow: 0 1rem 2rem rgba(0,0,0,0.4);
-  color: #0a0a0a;
-}
-
-.float-icon {
-  font-size: 1.5rem;
-  line-height: 1;
-}
-
-.float-text {
-  font-size: 0.875rem;
-  font-weight: 700;
-  max-width: 10rem;
-  line-height: 1.3;
-}
-
-.nosotros-text {
-  padding-top: 2rem; /* espacio para la tarjeta flotante en móvil */
-}
-
-.nosotros-desc {
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-sm);
-  line-height: 1.75;
 }
 
 /* ============================================================
@@ -640,6 +657,9 @@ ul { list-style: none; }
   margin-bottom: var(--space-md);
   line-height: 1.75;
   font-size: 1.0625rem;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* Lista de datos de contacto */
@@ -908,6 +928,9 @@ ul { list-style: none; }
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .card-img {
+    height: 20rem;
+  }
 
   .testimonios-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -955,6 +978,16 @@ ul { list-style: none; }
 .nav .nav-cta {
   margin-top: 0;
   border-radius: var(--radius-sm);
+  
+  animation: nav-pulse 2s ease-in-out 6s ;
+  transition: background-color var(--transition-slow), transform var(--transition-slow);
+}
+
+@keyframes nav-pulse {
+  0%, 100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(200, 241, 53, 0); }
+  50%       { transform: scale(0.95); box-shadow: 0 0 6px 7px rgba(0, 0, 0, 0.158); }
+
+
 }
 
   /* Hero: título más grande */
@@ -964,21 +997,29 @@ ul { list-style: none; }
 
   /* Stats: siempre 3 columnas */
   .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-md);
   }
 
   /* Canchas: 3 columnas */
+
+  .canchas .container {
+    max-width: 90rem;
+  }
   .cards-grid {
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.6rem;
   }
 
   /* Nosotros: 2 columnas */
   .nosotros-inner {
     grid-template-columns: 1fr 1fr;
+    gap: 4rem;
   }
 
   .nosotros-img {
-    height: 32rem;
+    height: 34rem;
   }
 
   .nosotros-float-card {
