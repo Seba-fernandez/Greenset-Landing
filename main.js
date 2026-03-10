@@ -16,7 +16,7 @@
    Formato: código de país + número, sin el +
    Ej: Argentina, número 11 2345 6789 → "5491123456789"
 ───────────────────────────────────────────────────── */
-const WHATSAPP_NUMBER = 'XXXXXXXXXXX'; // ← reemplazá aquí
+const WHATSAPP_NUMBER = '5493513785192'; // ← reemplazá aquí
 
 /* ─────────────────────────────────────────────────────
    1. HEADER — fondo al hacer scroll
@@ -138,8 +138,8 @@ const WHATSAPP_NUMBER = 'XXXXXXXXXXX'; // ← reemplazá aquí
   /* Campos requeridos con sus mensajes de error */
   const rules = [
     { id: 'nombre',  errorId: 'error-nombre',  msg: 'Por favor, ingresá tu nombre y apellido.' },
-    { id: 'cancha',  errorId: 'error-cancha',   msg: 'Selecciona el tipo de proyecto.' },
-    { id: 'fecha',   errorId: 'error-fecha',    msg: 'Contanos tu estimación de presupuesto.' },
+    { id: 'cancha',  errorId: 'error-cancha',   msg: 'Seleccioná el tipo de proyecto.' },
+    { id: 'presupuesto',   errorId: 'error-presupuesto',    msg: 'Por favor, indica un aproximado.' },
     { id: 'horario', errorId: 'error-horario',  msg: 'Por favor, indica tu ubicación.' },
   ];
 
@@ -192,7 +192,7 @@ const WHATSAPP_NUMBER = 'XXXXXXXXXXX'; // ← reemplazá aquí
     /* Armamos el mensaje para WhatsApp */
     const nombre  = document.getElementById('nombre').value.trim();
     const cancha  = document.getElementById('cancha').value;
-    const fecha   = document.getElementById('fecha').value;
+    const fecha   = document.getElementById('presupuesto').value;
     const horario = document.getElementById('horario').value.trim();
     const mensaje = document.getElementById('mensaje').value.trim();
 
@@ -218,7 +218,7 @@ const WHATSAPP_NUMBER = 'XXXXXXXXXXX'; // ← reemplazá aquí
     }
 
     /* Abrimos WhatsApp con el mensaje pre-armado */
-    const url = `https://wa.me/${5493513785192}?text=${encodeURIComponent(texto)}`;
+    const url = `https://wa.me/${'5493513785192'}?text=${encodeURIComponent(texto)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
   });
 })();
