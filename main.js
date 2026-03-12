@@ -53,7 +53,7 @@ const WHATSAPP_NUMBER = '5493513785192'; // ← reemplazá aquí
     },
     {
       threshold: 0.12,  // el elemento debe estar 12% visible para dispararse
-      rootMargin: '0px 0px -40px 0px', // empieza un poco antes del borde inferior
+      rootMargin: '0px 0px -30px 0px', // empieza un poco antes del borde inferior
     }
   );
 
@@ -74,7 +74,7 @@ const WHATSAPP_NUMBER = '5493513785192'; // ← reemplazá aquí
 
   function onScroll() {
     // Movemos el fondo a la mitad de la velocidad del scroll
-    const offset = window.scrollY * 0.35;
+    const offset = window.scrollY * 0.40;
     heroBg.style.transform = `translateY(${offset}px)`;
   }
 
@@ -82,18 +82,17 @@ const WHATSAPP_NUMBER = '5493513785192'; // ← reemplazá aquí
 })();
 
 /* ─────────────────────────────────────────────────────
-   4. CONTADORES ANIMADOS — Stats del club
+   4. CONTADORES ANIMADOS — Stats del equipo
    Se activan cuando el elemento entra al viewport
 ───────────────────────────────────────────────────── */
 (function initCounters() {
   const counters = document.querySelectorAll('.stat-number[data-target]');
   if (!counters.length) return;
 
-  const duration = 1600; // milisegundos de animación
+  const duration = 1750; // milisegundos de animación
 
   function animateCounter(el) {
-    const rawTarget = el.getAttribute('data-target');
-    const target = parseInt(rawTarget, 10);
+const target = parseInt(el.getAttribute('data-target'), 10);
 
     // Si el placeholder no es un número, salimos
     if (isNaN(target)) return;
@@ -128,6 +127,7 @@ const WHATSAPP_NUMBER = '5493513785192'; // ← reemplazá aquí
   counters.forEach((el) => observer.observe(el));
 })();
 
+
 /* ─────────────────────────────────────────────────────
    5. FORMULARIO WHATSAPP — Validación + redirección
 ───────────────────────────────────────────────────── */
@@ -135,93 +135,72 @@ const WHATSAPP_NUMBER = '5493513785192'; // ← reemplazá aquí
   const form = document.getElementById('whatsapp-form');
   if (!form) return;
 
-  /* Campos requeridos con sus mensajes de error */
   const rules = [
-    { id: 'nombre',  errorId: 'error-nombre',  msg: 'Por favor, ingresá tu nombre y apellido.' },
-    { id: 'cancha',  errorId: 'error-cancha',   msg: 'Seleccioná el tipo de proyecto.' },
-    { id: 'presupuesto',   errorId: 'error-presupuesto',    msg: 'Por favor, indica un aproximado.' },
-    { id: 'horario', errorId: 'error-horario',  msg: 'Por favor, indica tu ubicación.' },
+    { id: 'nombre',   errorId: 'error-nombre',   msg: 'Por favor, ingresá tu nombre.' },
+    { id: 'ubicacion',errorId: 'error-ubicacion', msg: 'Por favor, ingresá tu ciudad.' },
+    { id: 'deporte',  errorId: 'error-deporte',   msg: 'Seleccioná el tipo de cancha.' },
+    { id: 'proyecto', errorId: 'error-proyecto',  msg: 'Seleccioná el tipo de proyecto.' },
   ];
 
-  /* Limpia errores de un campo específico */
   function clearError(inputEl, errorEl) {
     inputEl.classList.remove('input--error');
     errorEl.textContent = '';
   }
 
-  /* Marca error en un campo */
   function showError(inputEl, errorEl, msg) {
     inputEl.classList.add('input--error');
     errorEl.textContent = msg;
   }
 
-  /* Valida todos los campos y devuelve true si el form es válido */
   function validate() {
     let valid = true;
-
     rules.forEach(({ id, errorId, msg }) => {
-      const input = document.getElementById(id);
+      const input   = document.getElementById(id);
       const errorEl = document.getElementById(errorId);
-      const value = input.value.trim();
-
-      if (!value) {
+      if (!input.value.trim()) {
         showError(input, errorEl, msg);
         valid = false;
       } else {
         clearError(input, errorEl);
       }
     });
-
     return valid;
   }
 
-  /* Limpiar error mientras el usuario escribe */
   rules.forEach(({ id, errorId }) => {
-    const input = document.getElementById(id);
+    const input   = document.getElementById(id);
     const errorEl = document.getElementById(errorId);
-
-    input.addEventListener('input', () => clearError(input, errorEl));
+    input.addEventListener('input',  () => clearError(input, errorEl));
+    input.addEventListener('change', () => clearError(input, errorEl));
   });
 
-  /* Submit */
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-
     if (!validate()) return;
 
-    /* Armamos el mensaje para WhatsApp */
-    const nombre  = document.getElementById('nombre').value.trim();
-    const cancha  = document.getElementById('cancha').value;
-    const fecha   = document.getElementById('presupuesto').value;
-    const horario = document.getElementById('horario').value.trim();
-    const mensaje = document.getElementById('mensaje').value.trim();
+    const nombre   = document.getElementById('nombre').value.trim();
+    const ubicacion= document.getElementById('ubicacion').value.trim();
+    const deporte  = document.getElementById('deporte').value;
+    const proyecto = document.getElementById('proyecto').value;
+    const espacio  = document.getElementById('espacio').value.trim();
+    const mensaje  = document.getElementById('mensaje').value.trim();
 
-    /* Formateamos la fecha de forma legible (dd/mm/aaaa) */
-    const fechaFormateada = fecha
-      ? new Date(fecha + 'T00:00:00').toLocaleDateString('es-AR', {
-          day:   '2-digit',
-          month: '2-digit',
-          year:  'numeric',
-        })
-      : '';
-
-    /* Texto que recibirá tu papá en WhatsApp */
     let texto =
-      `Hola Marcelo, quisiera consultar  🎾\n\n` +
+      `Hola Marcelo, consulta desde la web 🎾\n\n` +
       `👤 Nombre: ${nombre}\n` +
-      `🏟️ Cancha: ${cancha}\n` +
-      `📅 Fecha: ${fechaFormateada}\n` +
-      `🕐 Horario: ${horario}`;
+      `📍 Ubicación: ${ubicacion}\n` +
+      `🎾 Cancha: ${deporte}\n` +
+      `🏗️ Proyecto: ${proyecto}\n`
 
-    if (mensaje) {
-      texto += `\n💬 Comentario: ${mensaje}`;
-    }
+    if (espacio)  texto += `\n📐 Espacio: ${espacio}`;
+    if (mensaje)  texto += `\n💬 Comentario: ${mensaje}`;
 
-    /* Abrimos WhatsApp con el mensaje pre-armado */
-    const url = `https://wa.me/${'5493513785192'}?text=${encodeURIComponent(texto)}`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(texto)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
   });
 })();
+
+
 
 /* ─────────────────────────────────────────────────────
    6. AÑO DINÁMICO EN EL FOOTER
