@@ -79,7 +79,6 @@ a {
 }
 
 ul { list-style: none; }
-
 /* ============================================================
    CONTENEDOR CENTRALIZADO
    ============================================================ */
@@ -108,9 +107,9 @@ ul { list-style: none; }
 }
 
 /* Delays para stagger (encadenado visual) */
-.reveal--delay-1 { transition-delay: 0.12s; }
-.reveal--delay-2 { transition-delay: 0.24s; }
-.reveal--delay-3 { transition-delay: 0.36s; }
+.reveal--delay-1 { transition-delay: 0.08s; }
+.reveal--delay-2 { transition-delay: 0.16s; }
+.reveal--delay-3 { transition-delay: 0.26s; }
 
 /* ============================================================
    BOTONES
@@ -274,13 +273,7 @@ ul { list-style: none; }
   border-radius: var(--radius-sm);
   background-color: var(--color-accent);
   color: #0a0a0a;
-  animation: nav-pulse 2s ease-in-out 6s ;
   transition: background-color var(--transition-slow), transform var(--transition-slow);
-}
-
-@keyframes nav-pulse {
-  0%, 100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(200, 241, 53, 0); }
-  50%       { transform: scale(0.95); box-shadow: 0 0 6px 7px rgba(0, 0, 0, 0.158); }
 }
 
 .nav-cta:hover {
@@ -306,7 +299,7 @@ ul { list-style: none; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('img/imagenfondoHero.webp');
+  background-image: url('img/HeroOriginal.png');
   background-size: cover;
   background-position: center;
   /* Efecto parallax suave — manejado por JS */
@@ -320,8 +313,8 @@ ul { list-style: none; }
   background: linear-gradient(
     to bottom,
     rgba(10, 10, 10, 0.3) 0%,
-    rgba(10, 10, 10, 0.6) 50%,
-    rgba(10, 10, 10, 0.85) 100%
+    rgba(10, 10, 10, 0.5) 50%,
+    rgba(10, 10, 10, 0.90) 100%
   );
 }
 
@@ -542,7 +535,7 @@ ul { list-style: none; }
 .card-img--1 { background-image : url(img/TipodeCanchaAzul.webp); }
 .card-img--2 { background-image : url(img/TipodeCanchaVerde.webp); }
 .card-img--3 { background-image : url(img/TipodeCanchaRoja.webp); }
-.card-img--4 { background-image : url(img/fotocancha14.jpeg); }
+.card-img--4 { background-image : url(img/fotocancha14.webp); }
 
 .card-badge {
   position: absolute;
@@ -767,6 +760,12 @@ ul { list-style: none; }
   min-height: 1rem;
 }
 
+/* Asterisco para campos requeridos */
+.required-mark {
+  color: var(--color-accent);
+  margin-left: 2px;
+}
+
 /* ============================================================
    FOOTER
    ============================================================ */
@@ -830,7 +829,7 @@ ul { list-style: none; }
   box-shadow: 0 0.5rem 1.5rem rgba(37, 211, 102, 0.45);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   /* Animación de entrada con delay para no competir con el hero */
-  animation: fab-in 0.6s 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: fab-in 1.4s 0.05s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .whatsapp-fab:hover {
@@ -936,11 +935,13 @@ ul { list-style: none; }
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .footer-inner {
-    flex-direction: row;
-    justify-content:center;
-    text-align: left;
-  }
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  text-align: center;
+}
 }
 
 /* ── Desktop: ≥ (992px) ── */
@@ -949,6 +950,7 @@ ul { list-style: none; }
     --container-pad: 2.5rem;
     --header-h: 5rem;
   }
+
 
   /* Header: enlaces visibles */
   /* En desktop: hamburguesa oculta, nav visible normal */
@@ -978,17 +980,15 @@ ul { list-style: none; }
 .nav .nav-cta {
   margin-top: 0;
   border-radius: var(--radius-sm);
-  
-  animation: nav-pulse 2s ease-in-out 6s ;
+  animation: nav-pulse 1.5s ease-in-out 2s infinite;
   transition: background-color var(--transition-slow), transform var(--transition-slow);
 }
 
 @keyframes nav-pulse {
-  0%, 100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(200, 241, 53, 0); }
-  50%       { transform: scale(0.95); box-shadow: 0 0 6px 7px rgba(0, 0, 0, 0.158); }
-
-
+  0%, 100% { box-shadow: 0 0 0 0 rgba(215, 252, 83, 0.781); }
+  50%       { box-shadow: 0 0 7px 8px rgba(0, 0, 0, 0.24); }
 }
+
 
   /* Hero: título más grande */
   .hero-content {
@@ -1030,11 +1030,6 @@ ul { list-style: none; }
     padding-top: 0;
   }
 
-  .stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
   /* Testimonios: 3 columnas */
   .testimonios-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1045,19 +1040,26 @@ ul { list-style: none; }
     grid-template-columns: 1fr 1fr;
   }
 
-  /* Footer en fila */
-  .footer-inner {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
+
+  .whatsapp-fab {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 4rem;
   }
 }
 
 
 /* ── Wide desktop: ≥ (1400px) ── */
-@media (min-width: 1400px) {
+@media (min-width: 1380px) {
   :root {
     --container-pad: 3rem;
+  }
+  
+  /* Footer en fila */
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
   }
 }
 
