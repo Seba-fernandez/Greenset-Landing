@@ -299,7 +299,7 @@ ul { list-style: none; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('img/HeroOriginal.png');
+  background-image: url('img/HeroOriginal1.png');
   background-size: cover;
   background-position: center;
   /* Efecto parallax suave — manejado por JS */
@@ -312,9 +312,9 @@ ul { list-style: none; }
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(10, 10, 10, 0.3) 0%,
-    rgba(10, 10, 10, 0.5) 50%,
-    rgba(10, 10, 10, 0.90) 100%
+    rgba(10, 10, 10, 0.2) 0%,
+    rgba(10, 10, 10, 0.70) 50%,
+    rgba(10, 10, 10, 0.85) 100%
   );
 }
 
@@ -326,7 +326,7 @@ ul { list-style: none; }
 }
 
 .hero-eyebrow {
-  font-size: 0.80rem;
+  font-size: 0.90rem;
   padding-left: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -344,9 +344,10 @@ ul { list-style: none; }
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
   color: rgba(240, 240, 240, 0.856);
-  max-width: 30rem;
+  max-width: 40rem;
+  padding-left: 10px;
   margin-bottom: var(--space-md);
   line-height: 1.5;
 }
@@ -532,10 +533,10 @@ ul { list-style: none; }
 .card:hover .card-img { transform: scale(1.05); }
 
 /* Placeholders con color de fondo hasta que pongas las fotos */
-.card-img--1 { background-image : url(img/TipodeCanchaAzul.webp); }
-.card-img--2 { background-image : url(img/TipodeCanchaVerde.webp); }
-.card-img--3 { background-image : url(img/TipodeCanchaRoja.webp); }
-.card-img--4 { background-image : url(img/fotocancha14.webp); }
+.card-img--1 { background-image : url(img/CanchaAzul.jpeg); }
+.card-img--2 { background-image : url(img/CanchaRoja.jpeg); }
+.card-img--3 { background-image : url(img/BarCancha.jpeg); }
+.card-img--4 { background-image : url(img/CanchaNegra.webp); }
 
 .card-badge {
   position: absolute;
