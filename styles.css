@@ -299,7 +299,7 @@ ul { list-style: none; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('img/HeroOriginal1.png');
+  background-image: url('img/originalhero1.png');
   background-size: cover;
   background-position: center;
   /* Efecto parallax suave — manejado por JS */
@@ -438,7 +438,7 @@ ul { list-style: none; }
   height: 28rem;
   border-radius: var(--radius-lg);
   background-color: var(--color-surface-2);
-  background-image: url(img/NosotrosFoto.webp);
+  background-image: url(img/nosotrosfoto.webp);
   background-size: cover;
   background-position: center top;
 }
@@ -533,10 +533,10 @@ ul { list-style: none; }
 .card:hover .card-img { transform: scale(1.05); }
 
 /* Placeholders con color de fondo hasta que pongas las fotos */
-.card-img--1 { background-image : url(img/CanchaAzul.jpeg); }
-.card-img--2 { background-image : url(img/CanchaRoja.jpeg); }
-.card-img--3 { background-image : url(img/BarCancha.jpeg); }
-.card-img--4 { background-image : url(img/CanchaNegra.webp); }
+.card-img--1 { background-image : url(img/azulcancha.jpeg); }
+.card-img--2 { background-image : url(img/cancharoja.jpeg); }
+.card-img--3 { background-image : url(img/barcancha.jpeg); }
+.card-img--4 { background-image : url(img/canchanegra.webp); }
 
 .card-badge {
   position: absolute;
