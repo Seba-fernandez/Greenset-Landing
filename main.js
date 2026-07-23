@@ -92,7 +92,7 @@ const WHATSAPP_NUMBER = '5493513785192'; // ← reemplazá aquí
   const duration = 1750; // milisegundos de animación
 
   function animateCounter(el) {
-const target = parseInt(el.getAttribute('data-target'), 10);
+    const target = parseInt(el.getAttribute('data-target'), 10);
 
     // Si el placeholder no es un número, salimos
     if (isNaN(target)) return;
@@ -136,10 +136,10 @@ const target = parseInt(el.getAttribute('data-target'), 10);
   if (!form) return;
 
   const rules = [
-    { id: 'nombre',   errorId: 'error-nombre',   msg: 'Por favor, ingresá tu nombre.' },
-    { id: 'ubicacion',errorId: 'error-ubicacion', msg: 'Por favor, ingresá tu ciudad.' },
-    { id: 'deporte',  errorId: 'error-deporte',   msg: 'Seleccioná el tipo de cancha.' },
-    { id: 'proyecto', errorId: 'error-proyecto',  msg: 'Seleccioná el tipo de proyecto.' },
+    { id: 'nombre', errorId: 'error-nombre', msg: 'Por favor, ingresá tu nombre.' },
+    { id: 'ubicacion', errorId: 'error-ubicacion', msg: 'Por favor, ingresá tu ciudad.' },
+    { id: 'deporte', errorId: 'error-deporte', msg: 'Seleccioná el tipo de cancha.' },
+    { id: 'proyecto', errorId: 'error-proyecto', msg: 'Seleccioná el tipo de proyecto.' },
   ];
 
   function clearError(inputEl, errorEl) {
@@ -153,37 +153,42 @@ const target = parseInt(el.getAttribute('data-target'), 10);
   }
 
   function validate() {
-    let valid = true;
+    let firstInvalid = null;
     rules.forEach(({ id, errorId, msg }) => {
-      const input   = document.getElementById(id);
+      const input = document.getElementById(id);
       const errorEl = document.getElementById(errorId);
       if (!input.value.trim()) {
         showError(input, errorEl, msg);
-        valid = false;
+        if (!firstInvalid) firstInvalid = input;
       } else {
         clearError(input, errorEl);
       }
     });
-    return valid;
+    return firstInvalid;
   }
 
   rules.forEach(({ id, errorId }) => {
-    const input   = document.getElementById(id);
+    const input = document.getElementById(id);
     const errorEl = document.getElementById(errorId);
-    input.addEventListener('input',  () => clearError(input, errorEl));
+    input.addEventListener('input', () => clearError(input, errorEl));
     input.addEventListener('change', () => clearError(input, errorEl));
   });
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    if (!validate()) return;
+    const firstInvalid = validate();
+    if (firstInvalid) {
+      firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      firstInvalid.focus({ preventScroll: true });
+      return;
+    }
 
-    const nombre   = document.getElementById('nombre').value.trim();
-    const ubicacion= document.getElementById('ubicacion').value.trim();
-    const deporte  = document.getElementById('deporte').value;
+    const nombre = document.getElementById('nombre').value.trim();
+    const ubicacion = document.getElementById('ubicacion').value.trim();
+    const deporte = document.getElementById('deporte').value;
     const proyecto = document.getElementById('proyecto').value;
-    const espacio  = document.getElementById('espacio').value.trim();
-    const mensaje  = document.getElementById('mensaje').value.trim();
+    const espacio = document.getElementById('espacio').value.trim();
+    const mensaje = document.getElementById('mensaje').value.trim();
 
     let texto =
       `Hola Marcelo, consulta desde la web 🎾\n\n` +
@@ -192,11 +197,12 @@ const target = parseInt(el.getAttribute('data-target'), 10);
       `🎾 Cancha: ${deporte}\n` +
       `🏗️ Proyecto: ${proyecto}\n`
 
-    if (espacio)  texto += `\n📐 Espacio: ${espacio}`;
-    if (mensaje)  texto += `\n💬 Comentario: ${mensaje}`;
+    if (espacio) texto += `\n📐 Espacio: ${espacio}`;
+    if (mensaje) texto += `\n💬 Comentario: ${mensaje}`;
 
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(texto)}`;
-    window.open(url, '_blank', 'noopener,noreferrer');
+    const win = window.open(url, '_blank', 'noopener,noreferrer');
+    if (!win) window.location.href = url;
   });
 })();
 
@@ -216,7 +222,7 @@ const target = parseInt(el.getAttribute('data-target'), 10);
 ───────────────────────────────────────────────────── */
 (function initMobileMenu() {
   const toggle = document.getElementById('nav-toggle');
-  const nav    = document.getElementById('nav-menu');
+  const nav = document.getElementById('nav-menu');
   if (!toggle || !nav) return;
 
   function closeMenu() {

@@ -943,6 +943,12 @@ ul { list-style: none; }
   color: var(--color-accent);
   margin-left: 2px;
 }
+/* Marca de campo opcional */
+.label-opcional {
+  color: var(--color-text-muted);
+  font-weight: 400;
+  font-size: 0.8125rem;
+}
 
 /* ============================================================
    FOOTER
@@ -966,7 +972,10 @@ ul { list-style: none; }
   font-size: 1.5rem;
   letter-spacing: 0.05em;
   color: var(--color-white);
+  transition: color var(--transition-fast);
 }
+
+.footer-brand:hover { color: var(--color-accent); }
 
 .footer-copy {
   font-size: 0.8125rem;
